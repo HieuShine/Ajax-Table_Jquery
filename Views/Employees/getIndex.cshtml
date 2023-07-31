@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "getIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section scripts{
+    <script src="~/Scripts/Plugin/mustache.min.js"></script>
+    <script src="~/Scripts/Plugin/HomeController.js"></script>
+    <script src="~/Scripts/Plugin/Pagination.min.js"></script>
+    <script src="~/Scripts/js/jquery.gritter.min.js"></script>
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Phòng ban</td>
+            <td>Họ tên</td>
+            <td>Tuổi</td>
+            <td>Địa chỉ</td>
+            <td>Lương</td>
+            <td>ảnh</td>
+            <td>trạng thái</td>
+        </tr>
+    </thead>
+    <tbody id="table-data">
+    </tbody>
+
+</table>
+<div id="pagination" class="pagination">
+
+</div>
+
+<script id="data-template" type="x-tmpl-mustache">
+    <tr>
+
+           <td>{{eid}}</td>
+           <td>{{name}}</td>
+           <td>{{age}}</td>
+           <td>{{addr}}</td>
+           <td><input type="number" class="txtSalary" data-id="{{eid}}" name="salary" value="{{salary}}" /></td>
+           <td>{{image}}</td>
+           <td>{{deptid}}</td>
+           <td>{{{status}}}</td>
+       </tr>
+</script>

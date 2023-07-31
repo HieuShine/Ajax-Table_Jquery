@@ -1,0 +1,34 @@
+namespace demoCuoiky_2.Models
+{
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("Employee")]
+    public partial class Employee
+    {
+        [Key]
+        public int eid { get; set; }
+
+        [StringLength(30)]
+        public string name { get; set; }
+
+        public int? age { get; set; }
+
+        [StringLength(30)]
+        public string addr { get; set; }
+
+        public int? salary { get; set; }
+
+        [StringLength(50)]
+        public string image { get; set; }
+
+        public int? deptid { get; set; }
+        public bool status { get; set; }
+        [JsonIgnore]
+        public virtual Department Department { get; set; }
+    }
+}
